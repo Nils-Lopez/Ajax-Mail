@@ -1,0 +1,12 @@
+<tr id="mail-row-<%=mail.id%>">
+	<th scope="row"><%=last_nb%></th>
+	<td>
+		<%= link_to email_path(mail), method: :get, remote: true, style: "color: black;" do%>
+			<strong><%=mail.object%></strong> 
+		<%end%>
+		<%= link_to email_path(mail), method: :delete, style:"float:right;", class: "btn btn-outline-danger", remote: true do%>
+			<i class="fas fa-trash" ></i>
+		<%end%>
+		<%= link_to edit_email_path(mail), method: :get, style:"float:right; margin-right: 20px;", class: "btn btn-outline-secondary", remote: true do%>Marquer comme non-lu<%end%>
+	</td>
+</tr>

@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+
+  <%= render 'task_list'  %>
+
+<% end %>
+
+<h1> EIUIUHIEHE </h1>
+
+<%= link_to "Create a new task", new_task_path, class: "btn btn-info"  %>

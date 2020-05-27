@@ -1,0 +1,9 @@
+<td>
+		<div class="card rounded-0" style="padding: 15px; padding-top: 5px;">
+			<%= link_to edit_email_path(mail), method: :get, remote: true,data: {params: {tohide: true}.to_param}, style: "color: red;" do%><i class="fas fa-times" style="margin-left: 99%;"></i><%end%></a>
+			<div class="card-body" style="padding: 0;">
+				<h4 class="card-title"><%=mail.object%></h4>
+				<p class="card-text"><%=mail.body%></p>
+			</div>
+		</div>
+</td>

@@ -1,0 +1,5 @@
+<li>
+      <%= task.title %>,
+      "Deadline : " <%=  task.deadline.strftime("%D")  %>
+       <%= link_to "DELETE", task_path(task), method: :delete, class: "btn btn-danger", remote: true %>
+</li>

@@ -1,0 +1,7 @@
+if(<%=@tohide%>) {
+	document.getElementById("mail-row-<%=@mail.id%>").children[document.getElementById("mail-row-<%=@mail.id%>").children.length - 1].style.display = "none";
+	document.getElementById("mail-row-<%=@mail.id%>").getElementsByTagName("a")[0].href = "email/<%=@mail.id%>";
+}
+else {
+	document.getElementById("mail-row-<%=@mail.id%>").getElementsByTagName("a")[0].innerHTML = "<strong><%=@mail.object%></strong>"
+}

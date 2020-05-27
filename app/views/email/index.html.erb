@@ -1,0 +1,36 @@
+<script src="https://kit.fontawesome.com/01d50de81e.js" crossorigin="anonymous"></script>
+<center>
+	<%= link_to "Recevoir un mail", "email#create", method: :post, class: "btn btn-primary rounded-0", remote: true %>
+	<br>
+	<br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Liste des emails</th>
+				<th scope="col">Email sélectionné</th>
+			</tr>
+		</thead>
+		<%i = 0%>
+		<tbody>
+			<%@emails.each do |mail|%>
+				<tr id="mail-row-<%=mail.id%>">
+					<th scope="row" class="order"><%=i += 1%></th>
+					<td>
+						<%= link_to email_path(mail), method: :get, remote: true, style: "color: black;" do%>
+							<%unless mail.read%> 
+								<strong><%=mail.object%></strong> 
+							<%else%> 
+								<%=mail.object%> 
+							<%end%>  
+						<%end%>
+						
+						<%= link_to email_path(mail), method: :delete, style:"float:right;", class: "btn btn-outline-danger", remote: true do%><i class="fas fa-trash" ></i><%end%>
+						<%= link_to edit_email_path(mail), method: :get, style:"float:right; margin-right: 20px;", class: "btn btn-outline-secondary", remote: true do%>Marquer comme non-lu<%end%>
+					</td>
+
+				</tr>
+			<%end%>
+		</tbody>
+	</table>
+</center>
